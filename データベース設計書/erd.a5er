@@ -1,0 +1,278 @@
+﻿# A5:ER FORMAT:19
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright © 2007 m.matsubara
+# A5:SQL Mk-2 Version 2.20.2 Copyright © 1997 - 2025 m.matsubara
+#  https://a5m2.mmatsubara.com
+
+[Manager]
+ProjectName=
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+UpperCaseKeyword=0
+ShowTag=1
+ShowCommonAttributes=0
+BugFixEntityWidth=1
+
+[Entity]
+PName=page
+LName=ページ
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=750
+Top=50
+Field="ページid","id","NUMBER(10)","NOT NULL",0,"","ページのId",$FFFFFFFF,""
+Field="タイトル","title","NVARCHAR2(255)","NOT NULL",,"","タイトル",$FFFFFFFF,""
+Field="サブタイトル","subtitle","NVARCHAR2(255)",,,"","サブタイトル",$FFFFFFFF,""
+Field="イメージ","image","NVARCHAR2(255)",,,"","イメージ",$FFFFFFFF,""
+Field="内容","content","TEXT","NOT NULL",,"","内容",$FFFFFFFF,""
+Field="イメージ名","image_name","NVARCHAR2(100)",,,"","イメージの名前",$FFFFFFFF,""
+Field="イメージリンク","image_url","NVARCHAR2(255)",,,"","イメージをクリっクしたら遷移するURL",$FFFFFFFF,""
+Field="削除有無","del_flag","CHAR(1)","NOT NULL",,"ｎ","削除有無確認",$FFFFFFFF,""
+Field="登録者","registrar","NVARCHAR2(50)","NOT NULL",,"","登録者のId",$FFFFFFFF,""
+Field="登録日","registration_date","TIMESTAMP","NOT NULL",,"CURRENT_TIMESTAMP","登録した日",$FFFFFFFF,""
+Field="修正者","renewer","NVARCHAR2(50)",,,"","修正者のId",$FFFFFFFF,""
+Field="修正日","revision_date","TIMESTAMP",,,"CURRENT_TIMESTAMP","修正した日",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20250308170843
+Position="MAIN",750,50,468,336
+ZOrder=4
+
+[Entity]
+PName=menu
+LName=メニュー
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=150
+Top=200
+Field="メニューのid","id","SERIAL ","NOT NULL",0,"","メニューのId",$FFFFFFFF,""
+Field="親id","parent|_id","NUMBER(10)","NOT NULL",,"","親Idの有無を確認",$FFFFFFFF,""
+Field="名前","name","NVARCHAR2(100)","NOT NULL",,"","メニューの名前",$FFFFFFFF,""
+Field="イメージ","image","NVARCHAR2(255)",,,"","メニューのイメージ",$FFFFFFFF,""
+Field="リンク","link","NVARCHAR2(255)",,,"","メニューのリンクURL",$FFFFFFFF,""
+Field="順序","arrange","NUMBER(5)","NOT NULL",,"0","メニューの順序（整列）",$FFFFFFFF,""
+Field="活性化","active","CHAR(1)","NOT NULL",,"y","メニューの活性化",$FFFFFFFF,""
+Field="削除有無","del_flag","CHAR(1)","NOT NULL",,"n","削除有無を確認",$FFFFFFFF,""
+Field="登録者","registrar","NVARCHAR2(50)","NOT NULL",,"","メニューを登録した登録者のId",$FFFFFFFF,""
+Field="登録日","registration_date","TIMESTAMP","NOT NULL",,"CURRENT_TIMESTAMP","メニューを登録した日",$FFFFFFFF,""
+Field="修正者","renewer","NVARCHAR2(50)",,,"","メニューを修正した修正者のId",$FFFFFFFF,""
+Field="修正日","revision_date","TIMESTAMP",,,"CURRENT_TIMESTAMP","メニューを修正した日",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20250308170238
+Position="MAIN",150,200,447,305
+ZOrder=5
+
+[Entity]
+PName=access
+LName=アクセス
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=150
+Top=700
+Field="アクセスのid","id","SERIAL","NOT NULL",0,"","アクセスのId",$FFFFFFFF,""
+Field="タイトル","title","NVARCHAR2(255)","NOT NULL",,"","アクセスのタイトル",$FFFFFFFF,""
+Field="サブタイトル","subtitle","NVARCHAR2(255)",,,"","アクセスのサブタイトル",$FFFFFFFF,""
+Field="マップ","map","",,,"","グーグルマップ",$FFFFFFFF,""
+Field="緯度","latitude","DECIMAL(9,6)","NOT NULL",,"","アクセスの緯度",$FFFFFFFF,""
+Field="経度","longitude","DECIMAL(9,6)","NOT NULL",,"","アクセスの軽度",$FFFFFFFF,""
+Field="pin","pin","VARCHAR(255)","NOT NULL",,"","アクセスのpin",$FFFFFFFF,""
+Field="削除有無","del_flag","CHAR(1)","NOT NULL",,"ｎ","削除有無を確認",$FFFFFFFF,""
+Field="登録者","registrar","NVARCHAR2(50)","NOT NULL",,"","登録者のId",$FFFFFFFF,""
+Field="登録日","registration_date","TIMESTAMP","NOT NULL",,"CURRENT_TIMESTAMP","登録した日",$FFFFFFFF,""
+Field="修正者","renewer","NVARCHAR2(50)",,,"","修正者のId",$FFFFFFFF,""
+Field="修正日","revision_date","TIMESTAMP",,,"CURRENT_TIMESTAMP","修正する日",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20250308171025
+Position="MAIN",150,700,453,305
+ZOrder=6
+
+[Entity]
+PName=partner
+LName=パートナ
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=1450
+Top=200
+Field="パートナのId","id","SERIAL ","NOT NULL",0,"","パートナのId",$FFFFFFFF,""
+Field="パートナページのタイトル","title","NVARCHAR2(255)","NOT NULL",,"","パートナページのタイトル",$FFFFFFFF,""
+Field="パートナページのサブタイトル","subtitle","NVARCHAR2(255)",,,"","パートナページのサブタイトル",$FFFFFFFF,""
+Field="パートナイメージの名前","image_name","NVARCHAR2(100)","NOT NULL",,"","パスワードのイメージ名前",$FFFFFFFF,""
+Field="パートナのイメージ","image","NVARCHAR2(255)",,,"","パスワードのイメージ",$FFFFFFFF,""
+Field="パートナのURL","image_url","NVARCHAR2(255)",,,"","パスワードのリンクURL",$FFFFFFFF,""
+Field="削除有無","del_flag","CHAR(1)","NOT NULL",,"ｎ","削除有無を確認",$FFFFFFFF,""
+Field="登録者","registrar","NVARCHAR2(50)","NOT NULL",,"","パスワードを登録した登録者のId",$FFFFFFFF,""
+Field="登録日","registration_date","TIMESTAMP","NOT NULL",,"CURRENT_TIMESTAMP","パスワードを登録した日",$FFFFFFFF,""
+Field="修正者","renewer","NVARCHAR2(50)",,,"","パスワードを修正した修正者",$FFFFFFFF,""
+Field="修正日","revision_date","TIMESTAMP",,,"CURRENT_TIMESTAMP","パスワードを修正した日",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20250308171150
+Position="MAIN",1450,200,476,308
+ZOrder=7
+
+[Entity]
+PName=board
+LName=お問い合わせ
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=1450
+Top=750
+Field="お問い合わせのId","id","SERIAL ","NOT NULL",0,"","お問い合わせのId",$FFFFFFFF,""
+Field="作成者の名前","name","NVARCHAR2(100)","NOT NULL",,"","作成者の名前",$FFFFFFFF,""
+Field="作成者のメール","mail","NVARCHAR2(100)","NOT NULL",,"","作成者のメール",$FFFFFFFF,""
+Field="お問い合わせのタイトル","title","NVARCHAR2(255)","NOT NULL",,"","お問い合わせのタイトル",$FFFFFFFF,""
+Field="お問い合わせの内容","content","TEXT","NOT NULL",,"","お問い合わせの内容",$FFFFFFFF,""
+Field="お問い合わせの登録日","registrantion_date","TIMESTAMP","NOT NULL",,"CURRENT_TIMESTAMP","お問い合わせの登録日",$FFFFFFFF,""
+Field="お問い合わせの返事有無","answer","CHAR(1)","NOT NULL",,"n","お問い合わせの返事有無確認",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20250308171326
+Position="MAIN",1450,750,499,308
+ZOrder=8
+
+[Entity]
+PName=admin
+LName=管理者
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=750
+Top=600
+Field="プライマリーキー","no","SERIAL","NOT NULL",0,"","管理者のプライマリーキー",$FFFFFFFF,""
+Field="アカウントID","id","VARCHAR2(255)","NOT NULL",1,"","管理者のアカウントID",$FFFFFFFF,""
+Field="名前","name","VARCHAR2(100)","NOT NULL",,"","管理者の名前",$FFFFFFFF,""
+Field="パスワード","password","VARCHAR2(255)","NOT NULL",,"","管理者のパスワード",$FFFFFFFF,""
+Field="メール","mail","VARCHAR2(255)","NOT NULL",,"","管理者のメール",$FFFFFFFF,""
+Field="役割","role","NVARCHAR2(100)","NOT NULL",,"","内容追加、修正、削除ができる役割",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20250310115605
+Position="MAIN",750,600,505,304
+ZOrder=9
+
+[Relation]
+Entity1=admin
+Entity2=page
+RelationType1=1
+RelationType2=3
+Fields1=no,name
+Fields2=
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,4842,5158,4933,R,R,""
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=484
+Bar2=516
+Bar3=493
+TermPos1=R
+TermPos2=R
+ZOrder=19
+
+[Relation]
+Entity1=admin
+Entity2=partner
+RelationType1=1
+RelationType2=3
+Fields1=no,name
+Fields2=
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,2534,7466,5382,R,R,""
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=253
+Bar2=747
+Bar3=538
+TermPos1=R
+TermPos2=R
+ZOrder=20
+
+[Relation]
+Entity1=admin
+Entity2=menu
+RelationType1=1
+RelationType2=3
+Fields1=no,name
+Fields2=
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,2523,7477,5382,R,R,""
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=252
+Bar2=748
+Bar3=538
+TermPos1=R
+TermPos2=R
+ZOrder=21
+
+[Relation]
+Entity1=admin
+Entity2=access
+RelationType1=1
+RelationType2=3
+Fields1=no,name
+Fields2=
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,6102,3898,5382,R,R,""
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=610
+Bar2=390
+Bar3=538
+TermPos1=R
+TermPos2=R
+ZOrder=22
